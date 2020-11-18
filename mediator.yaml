@@ -1,0 +1,22 @@
+apiVersion: version1
+kind: Deployment
+metadata: 
+  name: mediator
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: mediator
+  template: 
+    metadata: 
+      labels: 
+        app: mediator
+    spec: 
+      containers: 
+        - 
+          image: "mediator:latest"
+          name: mediator
+          ports: 
+            - 
+              containerPort: 8082 
+              name: mediator

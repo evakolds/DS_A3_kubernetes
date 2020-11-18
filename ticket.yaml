@@ -1,0 +1,23 @@
+apiVersion: version1
+kind: Deployment
+metadata: 
+  name: ticketserver
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: ticketserver
+  template: 
+    metadata: 
+      labels: 
+        app: ticketserver
+    spec: 
+      containers: 
+        - 
+          image: "ticketserver:latest"
+          name: ticketserver
+          ports: 
+            - 
+              containerPort: 8086
+              name: ticketserver
+          

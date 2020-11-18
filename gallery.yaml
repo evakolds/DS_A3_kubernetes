@@ -1,0 +1,23 @@
+apiVersion: version1
+kind: Deployment
+metadata: 
+  name: galleryserver
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: galleryserver
+  template: 
+    metadata: 
+      labels: 
+        app: galleryserver
+    spec: 
+      containers: 
+        - 
+          image: "galleryserver:latest"
+          name: galleryserver
+          ports: 
+            - 
+              containerPort: 8087
+              name: galleryserver
+          

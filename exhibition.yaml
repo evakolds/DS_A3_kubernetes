@@ -1,0 +1,23 @@
+apiVersion: version1
+kind: Deployment
+metadata: 
+  name: exhibitionserver
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: exhibitionserver
+  template: 
+    metadata: 
+      labels: 
+        app: exhibitionserver
+    spec: 
+      containers: 
+        - 
+          image: "exhibitionserver:latest"
+          name: exhibitionserver
+          ports: 
+            - 
+              containerPort: 8085
+              name: exhibitionserver
+          

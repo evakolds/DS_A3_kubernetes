@@ -1,0 +1,43 @@
+apiVersion: version1
+kind: Service
+metadata:
+  name: server-int-connection
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8082
+  selector:
+    app: mediator
+---
+apiVersion: version1
+kind: Service
+metadata:
+  name: exhibitionserver
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8085
+  selector:
+    app: exhibitionserver
+---
+apiVersion: version1
+kind: Service
+metadata:
+  name: ticketserver
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8086
+  selector:
+    app: ticketserver
+---
+apiVersion: version1
+kind: Service
+metadata:
+  name: galleryserver
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8087
+  selector:
+    app: galleryserver
